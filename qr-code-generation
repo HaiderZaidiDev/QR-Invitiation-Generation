@@ -1,5 +1,6 @@
 import qrcode
 import xlrd
+from PIL import Image
 
 student_names = []
 student_numbers = []
@@ -16,6 +17,15 @@ for k in range(6, 469, 1):
 	student_numbers.append(int(sheet.cell_value(k, 2)))
 
 # Saves QR codes as JPG's with each students full name and student numbers. 
-for i in range(0, 469, 1):
+for i in range(0, 10, 1):
 	img = qrcode.make('{0}, {1}'.format(student_numbers[i], student_names[i].replace(',', '')))
-	img.save('{0}.jpg'.format(student_names[i])) # File saves as students last and first name. 
+	img.save('C:/Users/ferre/Desktop/QR/codes/{0}.jpg'.format(student_names[i])) # File saves as students last and first name. 
+
+# Pastes QR codes onto the master copy of the ticket
+image = Image.open('ticket-master.jpg')
+position = (0, 0)
+for j in range(len(student_names)):
+	qrcodes = Image.open('filepath/{}.jpg'.format(student_names[j]))
+	image.paste(qrcodes, position)
+	image.save('filepath/{}.jpg'.format(student_names[j]))
+
