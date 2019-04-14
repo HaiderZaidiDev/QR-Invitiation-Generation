@@ -17,5 +17,5 @@ for k in range(6, 469, 1):
 
 # Saves QR codes as JPG's with each students full name and student numbers. 
 for i in range(0, 469, 1):
-	img = qrcode.make('{0}, {1}'.format(student_numbers[i], student_names[i]))
+	img = qrcode.make('{0}, {1}'.format(student_numbers[i], student_names[i].replace(',', '')))
 	img.save('{0}.jpg'.format(student_names[i])) # File saves as students last and first name. 
