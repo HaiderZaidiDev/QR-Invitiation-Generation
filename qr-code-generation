@@ -40,7 +40,7 @@ for j in range(len(student_names)):
 	image.save('filepath/{}.jpg'.format(student_names[j]))
 
 for h in range(len(student_numbers)):
-	student_emails.append(str(student_numbers[h]) + '@distritdomain.net')
+	student_emails.append(str(student_numbers[h]) + '@districtdomain.net')
 
 
 ## sends email to each 12th grade student w/ qr code invitiation as attachment
