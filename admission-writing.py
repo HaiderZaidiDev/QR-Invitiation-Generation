@@ -4,8 +4,6 @@ import xlwt
 
 student_names = []
 student_numbers = []
-student_emails = []
-
 
 # Opens workbook for reading.
 wb = xlrd.open_workbook("excel-sheet.xlsx") 
@@ -22,7 +20,7 @@ for i in range(6, 469, 1):
 # Puts all student numbers in a list
 for k in range(6, 469, 1):
 	student_numbers.append(int(sheet.cell_value(k, 2)))
-
+			
 # Writes full names and student numbers to second workbook
 for j in range(len(student_names)):
 	ws.write(j, 1, '{}'.format(student_numbers[j] + ', ' + student_names[j]))
