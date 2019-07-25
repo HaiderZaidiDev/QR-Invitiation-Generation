@@ -4,6 +4,7 @@ A QR invitiation generation script developed for John Fraser Secondary School's 
 ## Features
 * Generates personalized invitiations for all graduating students, extracting the required information (e.g full name and student number) from a spreadsheet provided by the school's administraiton. 
 * Emails invitiations to each student's district issued email address. 
+
 Each invitiation contains:
 * The respective student's full name and homeroom class, allowing for easy distribution. 
 * A QR code, containing the students full name and student number to be scanned at the entry point of the venue. 
